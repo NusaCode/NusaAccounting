@@ -1,0 +1,62 @@
+@import url('top.css');
+@import url('menu.css');
+
+
+
+#mainMenu li
+{
+    margin: 0px;
+    padding: 0px;
+    float: left;
+    display: inline;
+    margin: 0px;
+    text-decoration: none;
+
+    height: 35px;
+    display: block;
+    margin: 0px;
+    padding: 0px;
+    padding: 0px 15px 0px 15px;
+    background: #0000ff url('../images/bg-menu-top-li.gif') 0px -55px;
+    color: #FFFFFF;
+
+    color: #ffffff;
+    line-height: 35px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+fieldset#elfield {
+    -moz-border-radius: 15px; 
+    -webkit-border-radius: 15px; 
+    -khtml-border-radius:15px; /* Linux browsers */ 
+    border-radius: 15px; 
+    width: 260px;
+    border:none; 
+
+    background-color: #EFEFEF; /* Needed for IEs */
+
+    -moz-box-shadow: 5px 5px 5px rgba(68,68,68,0.6);
+    -webkit-box-shadow: 5px 5px 5px rgba(68,68,68,0.6);
+    box-shadow: 5px 5px 5px rgba(68,68,68,0.6);
+    
+    filter: progid:DXImageTransform.Microsoft.Blur(PixelRadius=3,MakeShadow=true,ShadowOpacity=0.30);
+    -ms-filter: 'progid:DXImageTransform.Microsoft.Blur(PixelRadius=3,MakeShadow=true,ShadowOpacity=0.30)';
+    zoom: 1;
+    
+    behavior: url(border-radius.htc);
+}
+
+fieldset#elfield #conelfield {
+    position: relative; /* This protects the inner element from being blurred */
+    padding: 0;
+    background-color: #EFEFEF;
+    behavior: url(border-radius.htc);
+}
+
+fieldset#elfield legend {
+    color:#003E9F; 
+    font-size: 1.4em; 
+    font-weight: bold; 
+    padding:0 10px;
+}

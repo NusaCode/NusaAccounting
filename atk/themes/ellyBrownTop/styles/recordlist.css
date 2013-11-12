@@ -1,0 +1,158 @@
+
+.recordList {
+    text-align: left;
+}
+
+.recordListHeader {
+    /*background: #003e9f url(../images/bg-menu-top.gif) 0px -55px;*/
+    border-bottom: 1px solid #ddd;
+    font-weight: bold;
+
+    background:#AB8753;
+
+    /* Safari 4-5, Chrome 1-9 */
+    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#AB8753), to(#8A622A));
+
+    /* Safari 5.1, Chrome 10+ */
+    background: -webkit-linear-gradient(top, #AB8753, #8A622A);
+
+    /* Firefox 3.6+ */
+    background: -moz-linear-gradient(top, #AB8753, #8A622A);
+
+    /* IE > 8 */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#AB8753', endColorstr='#8A622A');
+
+    /* IE 10 */
+    background: -ms-linear-gradient(top, #AB8753, #8A622A);
+
+    /* Opera 11.10+ */
+    background: -o-linear-gradient(top, #AB8753, #8A622A);
+}
+
+.recordListHeader th,
+.recordListSearch th {
+    line-height: 2em;
+    padding: 1px 6px;
+    border-left: 1px solid #dddddd;
+    white-space: nowrap;
+}
+
+.recordListHeader th {
+    border: 0;
+}
+
+.recordListHeader th,
+.recordListHeader th a,
+.recordListHeader th label {
+    color: #ffffff;
+    text-decoration: none;
+}
+.recordListHeader th a {
+    padding-right: 14px;
+    background: url('../icons/recordlist/order.png') -12px right no-repeat;
+}
+
+.recordListHeader th a:hover,
+.recordListHeader th a:active {
+    text-decoration: underline;
+    background-position: 50% right;
+}
+
+.recordListSearch th,
+.recordListTotal th {
+    white-space: nowrap;
+    border-top: 1px solid #ffffff;
+    border-bottom: 1px solid #999999;
+    /*background: #d4d4d4 url('../images/bg-recordlist-th-search.gif');*/
+
+    background:#F4DFC2 ! important;
+
+    /* Safari 4-5, Chrome 1-9 */
+    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#F4DFC2), to(#EED0A6)) ! important;
+
+    /* Safari 5.1, Chrome 10+ */
+    background: -webkit-linear-gradient(top, #F4DFC2, #EED0A6) ! important;
+
+    /* Firefox 3.6+ */
+    background: -moz-linear-gradient(top, #F4DFC2, #EED0A6) ! important;
+
+    /* IE > 8 */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#F4DFC2', endColorstr='#EED0A6') ! important;
+
+    /* IE 10 */
+    background: -ms-linear-gradient(top, #F4DFC2, #EED0A6) ! important;
+
+    /* Opera 11.10+ */
+    background: -o-linear-gradient(top, #F4DFC2, #EED0A6) ! important;
+}
+
+.recordListSearch th input, 
+.recordListSearch th select {
+    width: 95%;
+    font-weight: normal;
+    background-color: #ffffff;
+}
+
+.recordListSearch th input[type='submit'] {
+    width: 50px;
+    height: 22px;
+    margin-right: 5px;
+    float: left;
+    line-height: 18px;
+}
+.recordListSearch th input[type='submit']:hover {
+    background-position: 0px -31px;
+}
+.recordListSearch th input[type='submit']:focus,
+.recordListSearch th input[type='submit']:active {
+    background-position: 0px -62px;
+}
+
+.recordListSearch th br {
+    display: none;
+}
+
+.recordListSearch th a {
+    width: 20px;
+    height: 22px;
+    text-indent: 20px;
+    display: block;
+    float: left;
+    overflow: hidden;
+    background: url('../icons/recordlist/search.png') 0 0 no-repeat;
+}
+
+.recordListRecord td,
+.recordListTotal th {
+    line-height: 2.4em;
+    border-left: 1px solid #dddddd;
+    padding: 0 6px;
+    border-top: 1px solid #ffffff;
+    border-bottom: 1px solid #e1e1e1;
+}
+
+.recordListRecord td.recordListTdLast,
+.recordListSearch th.recordListSearchThLast {
+    border-right: 1px solid #dddddd;
+}
+
+
+.recordListRecord.row1 {
+    background-color: #f7f7f7;
+}
+
+.recordListRecord.row2 {
+    background-color: #ececec;
+}
+
+.recordListRecord td img {
+    vertical-align: middle;
+}
+
+.recordListTotal th.recordListTotalNum {
+    border-top: 2px solid #999999;
+}
+
+.multirecord-actions-links {
+    padding-top: 8px;
+}

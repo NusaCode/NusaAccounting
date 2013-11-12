@@ -1,0 +1,136 @@
+.recordListContainer {
+    width: 100%;
+    border: 0px solid #f00;
+}
+
+.recordList {
+    width: 100%;
+}
+
+.recordListSearch {
+    background: #666 ! important;
+}
+
+.recordListContainer td {
+    padding: 8px 0px;
+}
+
+.recordList {
+    border-bottom: 3px solid #D7D7D7;
+    width: 100%;
+    border: 0px solid #d7d7d7;
+}
+
+.recordListSearch {
+    border-bottom: 3px solid #fff;
+    /*background-color: #ddd !important;*/
+    padding-top: 12px !important;
+    padding-bottom: 12px !important;
+
+    background:#F4DFC2 ! important;
+
+    /* Safari 4-5, Chrome 1-9 */
+    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#F4DFC2), to(#EED0A6)) ! important;
+
+    /* Safari 5.1, Chrome 10+ */
+    background: -webkit-linear-gradient(top, #F4DFC2, #EED0A6) ! important;
+
+    /* Firefox 3.6+ */
+    background: -moz-linear-gradient(top, #F4DFC2, #EED0A6) ! important;
+
+    /* IE > 8 */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#F4DFC2', endColorstr='#EED0A6') ! important;
+
+    /* IE 10 */
+    background: -ms-linear-gradient(top, #F4DFC2, #EED0A6) ! important;
+
+    /* Opera 11.10+ */
+    background: -o-linear-gradient(top, #F4DFC2, #EED0A6) ! important;
+}
+
+.recordListSearch a {
+    color: #451E00 ! important;
+}
+
+.recordListSearch input, .recordListSearch select {
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+}
+
+.recordList td, .recordList th {
+    padding: 4px;
+    border-right: 1px solid #fff;
+}
+
+.recordList td {
+    border-right: 1px solid #eee;
+}
+
+.recordList th {
+    /*background-color: #aaa;*/
+    /*font-weight: normal;*/
+    font-weight: bold;
+    text-align: center;
+    color: #FFFFFF;
+    background:#AB8753;
+
+    /* Safari 4-5, Chrome 1-9 */
+    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#AB8753), to(#8A622A));
+
+    /* Safari 5.1, Chrome 10+ */
+    background: -webkit-linear-gradient(top, #AB8753, #8A622A);
+
+    /* Firefox 3.6+ */
+    background: -moz-linear-gradient(top, #AB8753, #8A622A);
+
+    /* IE > 8 */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#AB8753', endColorstr='#8A622A');
+
+    /* IE 10 */
+    background: -ms-linear-gradient(top, #AB8753, #8A622A);
+
+    /* Opera 11.10+ */
+    background: -o-linear-gradient(top, #AB8753, #8A622A);
+}
+
+.recordList th a {
+    /*color: #000;*/
+    color: #FFFFFF;
+}
+
+.recordListTd, .recordListTdFirst {
+    border-left: 3px solid #d7d7d7;
+    border-left: 0px solid #fff;
+    border-bottom: 1px dashed #aaa;
+}
+
+.recordListTh, .recordListThFirst {
+    border-left: 3px solid #d7d7d7;
+    border-left: 0px solid #fff;
+    border-bottom: 1px dashed #aaa;
+}
+
+.recordListTh a {
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.recordListThFirst a {
+    font-weight: bold;
+}
+
+input[type="checkbox"] {
+    width: auto;
+    border: 0px;
+}
+
+.checkBox {
+    width: auto ! important;
+}
+
+img.recordlist {
+    width: 16px;
+    height: 16px;
+}
+

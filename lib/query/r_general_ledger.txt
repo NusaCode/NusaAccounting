@@ -1,0 +1,25 @@
+SELECT
+  `j`.`id_journal`       AS `id_journal`,
+  `j`.`v_no`       AS `v_no`,
+  `j`.`trans_date` AS `trans_date`,
+  c.`coa_code`     AS `coa`,
+  c.`coa_name`     AS `coa_name`,
+  `t`.`desc`       AS `desc`,
+  `t`.`debit` AS `debit`,
+  `t`.`credit` AS `credit`,
+  YEAR(`j`.`trans_date`) AS `periode_year`,
+  MONTH(`j`.`trans_date`) AS `periode_month`,
+  `j`.`posting`    AS `posting`,
+  `j`.`id_org`     AS `id_org`
+FROM
+  `transaction` t,
+  journal j,
+  coa_#@id_org#@ c
+WHERE
+  t.`id_journal` = j.`id_journal`
+  AND j.id_org = #@id_org#@
+  AND c.`coa_code` = '#@coa_code#@'
+  AND c.`coa_code` = t.`coa`
+  AND j.`posting`=1
+  AND CONCAT ((SUBSTR(`j`.`trans_date`,1,4)),(SUBSTR(`j`.`trans_date`,6,2))) = '#@yyyymm#@'
+ORDER BY j.`trans_date` ASC

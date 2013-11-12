@@ -1,0 +1,132 @@
+
+.recordListContainer {
+  padding-left: 0px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.recordListTd, 
+.recordListSearch
+{
+  border-left: 1px solid #dddddd;
+}
+
+.recordListTdLast, 
+.recordListSearchLast 
+{
+  border-right: 1px solid #dddddd;
+}
+
+.recordList .row1
+{
+  background-color: #f7f7f7;
+}
+.recordList .row2
+{
+  background-color: #ececec;
+}
+
+td.recordListTd, 
+td.recordListTdFirst
+{
+  padding: 5px 12px 2px 12px;
+  border-top: 1px solid #ffffff;
+  border-bottom: 1px solid #e1e1e1;
+}
+
+td.recordListTd img, 
+td.recordListTdFirst img {
+  vertical-align: middle;
+}
+
+.recordList th 
+{
+  white-space: nowrap;
+  padding: 4px 10px 3px 12px;
+}
+
+.recordList .recordListHeader .recordListTh 
+{
+  /* background: #003e9f url('../images/bg-recordlist-th.gif') top; */
+  background: #003e9f url(../images/bg-menu-top.gif) 0px -55px;
+  border-bottom: 1px solid #ddd;
+  color: #FFFFFF;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.recordListThFirst 
+{
+  /* background: #003e9f url('../images/bg-recordlist-th-left.gif') top left no-repeat; */
+}
+.recordListThLast 
+{
+  /* background: #003e9f url('../images/bg-recordlist-th-right.gif') top right no-repeat; */
+}
+
+.recordListHeader a,
+.recordListHeader label
+{
+  color: #FFFFFF;
+  text-decoration: none;
+}
+.recordListHeader a:hover,
+.recordListHeader a:active 
+{
+  text-decoration: underline;
+}
+
+
+
+
+.recordListSearch, 
+.recordListSearchFirst,
+.recordListTotal 
+{
+  border-top: 1px solid #fff;
+  height: 21px;
+  background: #d4d4d4 url('../images/bg-recordlist-th-search.gif');
+  padding: 2px 12px 2px 12px !important;
+}
+
+.recordListTotalNum {
+  border-top: 2px solid #999999;
+}
+
+
+.recordListSearch input, 
+.recordListSearchFirst input, 
+.recordListSearch select 
+{
+  font-size: 10px;
+  margin: 0px;
+  padding: 1px;
+  border: 1px solid #cbcbcb;
+  background-color: #fff !important;
+  text-transform: none;
+}
+
+
+.recordListSearch input 
+{	
+	width: 100%;
+}
+
+input.btn_search 
+{
+	width: 45px;
+	height: 20px;
+	line-height: 17px;
+	background: url('../images/bg-button.gif');
+	border: 1px solid #cdcdcd;
+	text-align: center;
+	font-size: 9px;
+}
+input.btn_search:hover 
+{
+	background-position: 0px -32px;
+}
+input.btn_search:focus,input.btn_search:active 
+{
+	background-position: 0px -64px;
+}

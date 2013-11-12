@@ -1,0 +1,576 @@
+body {
+	margin: 0;
+	padding: 0;
+  font-family: "Trebuchet ms", Verdana, Arial;
+}
+
+@font-face {
+  font-family: 'FontAwesome';
+  src: url('typefaces/fontawesome-webfont.eot?v=3.0.1');
+  src: url('typefaces/fontawesome-webfont.eot?#iefix&v=3.0.1') format('embedded-opentype'), url('typefaces/fontawesome-webfont.woff?v=3.0.1') format('woff'), url('typefaces/fontawesome-webfont.ttf?v=3.0.1') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+/*** ESSENTIAL STYLES ***/
+.sf-menu, .sf-menu * {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+.sf-menu li {
+	position: relative;
+}
+.sf-menu ul {
+	position: absolute;
+	display: none;
+	top: 100%;
+	left: 0;
+	z-index: 99;
+}
+.sf-menu > li {
+	float: left;
+}
+.sf-menu li:hover > ul,
+.sf-menu li.sfHover > ul {
+	display: block;
+}
+
+.sf-menu a {
+	display: block;
+	position: relative;
+}
+.sf-menu ul ul {
+	top: 0;
+	left: 100%;
+}
+
+
+/*** DEMO SKIN ***/
+.sf-menu {
+	float: left;
+	/*margin-bottom: 1em;*/
+}
+.sf-menu ul {
+  /*box-shadow: 2px 2px 6px rgba(0,0,0,.2);*/
+	box-shadow: 0 2px 4px #D6D6D6;
+	min-width: 12em; /* allow long menu items to determine submenu width */
+	*width: 12em; /* no auto sub width for IE7, see white-space comment below */
+
+  /*border: 1px solid #D6D6D6;*/
+  margin-top: 2px;
+}
+.sf-menu a {
+	/*border-left: 1px solid #fff;*/
+	/*border-top: 1px solid #dFeEFF;  fallback colour must use full shorthand 
+	border-top: 1px solid rgba(255,255,255,.5);*/
+  /*padding: .75em 1em;*/
+	padding: .75em;
+	text-decoration: none;
+	zoom: 1; /* IE7 */
+
+  /*line-height: 17px;*/
+}
+.sf-menu a {
+  /*color: #13a;*/
+  color: #777777;
+  /*color: #53A1B8;*/
+	/*color: #DD4B39;*/
+  font-size: 13px;
+  font-weight: normal;
+}
+.sf-menu li {
+  /*background: #BDD2FF;*/
+  /*background: transparent;*/
+  background: #F1F1F1;
+  /*background: #FFFFFF;*/
+	white-space: nowrap; /* no need for Supersubs plugin */
+	*white-space: normal; /* ...unless you support IE7 (let it wrap) */
+/*	-webkit-transition: background .2s;
+	transition: background .2s;*/
+  -webkit-transition: all ease 0.238s;
+  -moz-transition: all ease 0.238s;
+  -o-transition: all ease 0.238s;
+  transition: all ease 0.238s;
+}
+.sf-menu ul li {
+	/*background: #AABDE6;*/
+  /*background: #53A1B8;*/
+}
+.sf-menu ul ul li {
+	/*background: #9AAEDB;*/
+}
+.sf-menu li:hover,
+.sf-menu li.sfHover {
+  /*background: #CFDEFF;*/
+  /*background: #F1F1F1;*/
+  /*background: #53A1B8;*/
+	/*background: #DD4B39;*/
+	/* only transition out, not in */
+/*	-webkit-transition: none;
+	transition: none;*/
+
+  -webkit-transition: all ease 0.238s;
+  -moz-transition: all ease 0.238s;
+  -o-transition: all ease 0.238s;
+  transition: all ease 0.238s;
+}
+
+/*** arrows (for all except IE7) **/
+.sf-arrows .sf-with-ul {
+  /*padding-right: 2em;*/
+  padding-right: 1.8em;
+	/*padding-right: 1.25em;*/
+	*padding-right: 1em; /* no CSS arrows for IE7 (lack pseudo-elements) */
+}
+/* styling for both css and generated arrows */
+.sf-arrows .sf-with-ul:after {
+	/*content: '';*/
+	position: absolute;
+	top: 50%;
+  /*right: 1em;*/
+	right: 1.5em;
+  /*margin-top: -3px;*/
+	margin-top: -7px;
+	height: 0;
+	width: 0;
+	/* order of following 3 rules important for fallbacks to work */
+	/*border: 5px solid transparent;*/
+	/*border-top-color: #dFeEFF;  edit this to suit design (no rgba in IE8) */
+  /*border-top-color: rgba(255,255,255,.5);*/
+	/*border-top-color: #333333;*/
+
+  font-family: "FontAwesome";
+  font-weight: normal;
+  font-style: normal;
+  text-decoration: inherit;
+  speak: none;
+  /*width: 1.5em;*/
+  display: inline-block;
+  text-align: right;
+  line-height: 1;
+  /*content: "\f179";*/
+  content: "\f107";
+
+}
+.sf-arrows > li > .sf-with-ul:focus:after,
+.sf-arrows > li:hover > .sf-with-ul:after,
+.sf-arrows > .sfHover > .sf-with-ul:after {
+	border-top-color: white; /* IE8 fallback colour */
+}
+/* styling for right-facing arrows */
+.sf-arrows ul .sf-with-ul:after {
+	margin-top: -5px;
+	margin-right: -3px;
+	border-color: transparent;
+	border-left-color: #dFeEFF; /* edit this to suit design (no rgba in IE8) */
+	border-left-color: rgba(255,255,255,.5);
+}
+.sf-arrows ul li > .sf-with-ul:focus:after,
+.sf-arrows ul li:hover > .sf-with-ul:after,
+.sf-arrows ul .sfHover > .sf-with-ul:after {
+	border-left-color: white;
+}
+
+
+
+
+#nav-container {
+  background-color: #F1F1F1;
+  /*background-color: #FFFFFF;*/
+  /*background-color: #FAFAFA;*/
+  top: 0;
+  /*box-shadow: 0 1px 10px #5E5E5E;*/
+  /*box-shadow: 0 1px 5px #5E5E5E;*/
+  box-shadow: 0 2px 4px #D6D6D6;
+  /*border-bottom: 0.422em solid #53A1B8;*/
+  /*border-bottom: 2px solid #DD4B39;*/
+  border-bottom: 1px solid #D6D6D6;
+  /*border-bottom: 1px solid #E8E8E8;*/
+
+  width: auto !important;
+  min-width: 1003px;
+  height: auto;
+  min-height: 100%;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-bottom: 5px;
+}
+
+.nas-grid-box:before, .nas-grid-box:after {
+    content: ".";
+    display: block;
+    height: 0;
+    visibility: hidden;
+}
+.nas-grid-box:after {
+    clear: both;
+}
+
+
+#nav {
+  margin-right: 10px !important;
+  margin-left: 10px !important;
+}
+
+#logo-container {
+  /*margin-left: 9px;*/
+  /*margin-right: 10px;*/
+  /*position: absolute;*/
+  position: relative;
+
+  float: left;
+  /*float: right;*/
+  height: 35px;
+  max-width: 190px;
+  padding-top: 2px;
+}
+
+#logo-title {
+  font-size: 2em;
+  color: #333333;
+  
+}
+
+#logo {
+  /*background: url("../images/nas-icon.png") no-repeat scroll 0 -526px rgba(0, 0, 0, 0);*/
+  height: inherit;
+}
+
+img {
+  border: 0 none;
+  font-size: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+#user-container {
+  color: #555555;
+  float: right;
+  /*float: left;*/
+  margin-top: 5px;
+  margin-left: 10px;
+  position: relative;
+    cursor: pointer;
+}
+
+#user-displayname {
+  color: #666666;
+  font-size: 13px;
+  margin-right: 5px;
+}
+
+#user-container .nas-user-icon {
+    padding: 0;
+}
+
+.nas-uix-button {
+    height: 26px;
+}
+
+.nas-uix-button {
+    border: 1px solid rgba(0, 0, 0, 0);
+    border-radius: 2px 2px 2px 2px;
+    /*box-shadow: 0 1px 0 rgba(0, 0, 0, 0.05);*/
+    cursor: pointer;
+    display: inline-block;
+    font-size: 11px;
+    font-weight: bold;
+    height: 29px;
+    line-height: normal;
+    outline: 0 none;
+    padding: 0 10px;
+    text-decoration: none;
+    vertical-align: middle;
+    white-space: nowrap;
+    word-wrap: normal;
+}
+
+#nas-user-dropdown {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    border-color: #999999 rgba(0, 0, 0, 0) rgba(0, 0, 0, 0);
+    border-image: none;
+    border-right: 5px solid rgba(0, 0, 0, 0);
+    border-style: solid;
+    border-width: 5px;
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    top: 3px;
+}
+
+.nas-valign:before, .nas-valign-container {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+#menu {
+  float: right;
+	/*float: left;*/
+  position: relative;
+  margin-right: 10px;
+}
+
+.sf-menu li.sfHover ul li:hover {
+  padding-left: 5px;
+  /*background-color: #4F99AF;*/
+  /*background-color: #DD4B39;*/
+  color: #DD4B39;
+}
+
+.sf-menu li.sfHover > a,
+.sf-menu li a:hover,
+.sf-menu li.sfHover ul li > a:hover {
+  /*color: #FFFFFF;*/
+  color: #DD4B39;
+  font-weight: bold;
+  /*background-color: #DD4B39;*/
+}
+
+.sf-menu li.sfHover ul li > a {
+  color: #777777;
+  background: none repeat scroll 0 0 #F5F5F5;
+  /*background: none repeat scroll 0 0 #FFFFFF;*/
+}
+
+.sf-menu li a:hover {
+
+}
+
+.sf-menu img {
+  height: 20px;
+  margin-right: 3px;
+  vertical-align: middle;
+}
+
+/*.sf-menu li.sfHover ul li > a:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+  font-weight: bold;
+}*/
+
+
+
+.nas_container * {
+    font-family: arial,sans-serif;
+}
+
+.nas_container {
+    padding-left: 15px;
+    padding-right: 30px;
+    position: relative;
+    font-family: arial,sans-serif;
+    display: none;
+}
+
+.nas_ua.nas_8 .nas_D, .nas_ua.nas_8 .nas_E, .nas_ua.nas_8 .nas_o {
+    display: block;
+}
+
+.nas_o {
+    animation: 0.2s ease 0s normal none 1 nas__a;
+    background: none repeat scroll 0 0 #FFFFFF;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 2px 2px 2px 2px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    /*display: none;*/
+    /*display: block;*/
+    overflow: hidden;
+    position: absolute;
+    right: 0;
+    top: 42px;
+    z-index: 3;
+}
+
+.nas_J {
+    color: #CCCCCC;
+    margin: 6px 0;
+}
+
+a.nas_I.nas_I, .nas_J.nas_J a {
+    color: #3366CC;
+    text-decoration: none;
+}
+a.nas_I:active, a.nas_I:hover, .nas_J a:active, .nas_J a:hover {
+    text-decoration: underline;
+}
+.nas_J a:first-child {
+    margin-left: 0;
+}
+.nas_J a {
+    margin: 0 10px;
+}
+
+.nas_K {
+    margin: 20px;
+}
+
+.nas_L {
+    margin-right: 20px;
+    position: relative;
+}
+.nas_L, .nas_M {
+    display: inline-block;
+    vertical-align: top;
+}
+
+.nas_M a.nas_x.nas_x {
+    color: #FFFFFF;
+}
+a.nas_x.nas_x {
+    /*color: #666666;*/
+    cursor: default;
+    text-decoration: none;
+}
+.nas_M .nas_x {
+    background: none repeat scroll 0 0 #4D90FE;
+    border-color: #3079ED;
+    font-weight: bold;
+    margin: 10px 0 0;
+    color: #FFFFFF;
+    text-decoration: none;    
+}
+.nas_M .nas_x:hover {
+    background: none repeat scroll 0 0 #357AE8;
+    border-color: #2F5BB7;
+    cursor: pointer;
+}
+.nas_x {
+    background: none repeat scroll 0 0 #F8F8F8;
+    border: 1px solid #C6C6C6;
+    border-radius: 2px 2px 2px 2px;
+    display: inline-block;
+    line-height: 28px;
+    padding: 0 12px;
+}
+.nas_N {
+    border: medium none;
+    height: 96px;
+    vertical-align: top;
+    width: 96px;
+}
+
+.nas_O:not(x) {
+    visibility: visible;
+}
+
+.nas_O {
+    background: none repeat scroll 0 0 rgba(0, 0, 0, 0);
+    bottom: 0;
+    color: rgba(0, 0, 0, 0);
+    font-size: 9px;
+    font-weight: bold;
+    left: 0;
+    line-height: 9px;
+    padding: 7px 0;
+    position: absolute;
+    text-align: center;
+    transition: all 0.218s ease-in-out 0s;
+    visibility: hidden;
+    width: 96px;
+}
+
+.nas_0 {
+    display: inline-block;
+    margin: 6px 0 0 10px;
+
+    max-width: 200px;
+    overflow: auto;
+}
+
+.nas_P {
+    font-weight: bold;
+    margin: -4px 0 1px;
+}
+
+.nas_Q {
+    color: #666666;
+}
+
+.nas_R {
+    background: none repeat scroll 0 0 #F5F5F5;
+    border-color: rgba(0, 0, 0, 0.2);
+    border-top: 1px solid rgba(0, 0, 0, 0.2);
+    display: table;
+    padding: 10px 0;
+    width: 100%;
+}
+.nas_R a.nas_x:hover {
+    background: none repeat scroll 0 0 #EEEEEE;
+    /*border-color: #2F5BB7;*/
+    /*color: #FFFFFF;*/
+    cursor: pointer;
+}
+.nas_R > div {
+    display: table-cell;
+    text-align: right;
+}
+
+.nas_R .nas_x {
+    margin: 0 20px;
+}
+.nas_U {
+    background: none repeat scroll 0 0 #F5F5F5;
+    border-top: 1px solid rgba(0, 0, 0, 0.2);
+    max-height: 230px;
+    overflow: auto;
+}
+
+.nas_V:first-child, .nas_W:first-child + .nas_V {
+    border-top: 0 none;
+}
+.nas_V {
+    /*border-top: 1px solid rgba(0, 0, 0, 0.2);*/
+    display: block;
+    padding: 10px 20px;
+}
+.nas_V:hover {
+    background: none repeat scroll 0 0 #EEEEEE;
+    text-decoration: none;
+}
+
+.nas_Z {
+    border: medium none;
+    vertical-align: top;
+}
+
+.nas_1 {
+    color: #000000;
+    font-weight: bold;
+}
+.nas_2 {
+    color: #9400D3;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+.nas_3 {
+    color: #666666;
+    font-size: 11px;
+}
+
+.nas_N, 
+.nas_Z {
+    border: 3px solid #FFFFFF;
+    border-radius: 50px;
+    box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.2);
+}
+
+#cl_gbc {
+    background: none repeat scroll 0 0 #DD4B39;
+    border: 1px solid #BB2917;
+    color: #FFFFFF;
+    cursor: pointer;
+    font-weight: bold;
+    padding: 5px;
+    position: absolute;
+    text-align: center;
+    width: 15px;
+}
+#cl_gbc:hover {
+  background: none repeat scroll 0 0 #BB2917;
+  border: 1px solid #DD4B39;
+}

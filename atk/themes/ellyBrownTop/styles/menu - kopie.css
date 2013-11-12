@@ -1,0 +1,80 @@
+#mainMenu
+{
+  height: 35px;
+  margin: 0px;
+  padding: 0px;
+  padding-left: 30px;
+  display: block;
+  background: url(../images/bg-menu-top.gif) 0px -55px;
+  border-top: 1px solid #999999;
+  border-bottom: 1px solid #999999;
+
+}
+
+#box-menu a:hover {
+  text-decoration: none;
+}
+
+#mainMenu li
+{
+  margin: 0px;
+  padding: 0px;
+  float: left;
+  display: inline;
+  margin: 0px;
+  text-decoration: none;
+}
+
+.menuItemLevel1 a {
+  height: 35px;
+  display: block;
+  margin: 0px;
+  padding: 0px;
+  padding: 0px 15px 0px 15px;
+  background: #0000ff url('../images/bg-menu-top-li.gif') 0px -55px;
+  color: #FFFFFF;
+}
+
+.menuItemLevel1 a span {
+  margin: 0px;
+  padding: 0px;
+  padding-top: 0px;
+  /* text-transform: uppercase; */
+  color: #ffffff;
+  line-height: 35px;
+  font-size: 12px;
+  font-weight: bold;
+  
+}
+
+#mainMenu li.menuItemLevel1-active a, #mainMenu li.menuItemLevel1 a:hover {
+  background: #0000ff url(../images/bg-menu-top-li-active.gif) 0px -55px;
+}
+
+.submenuHover {
+  height: 25px;
+  margin: 0px;
+  padding: 0px;
+  padding-left: 30px;
+  display: block;
+  background: #e9e9e9;
+  font-size: 11px;
+}
+
+.submenuHover li
+{
+  float: left;
+  display: block;
+}
+
+.submenuHover li a, .submenuHover li  a:visited, .submenuHover li  a:active {
+  padding-left: 15px;
+  padding-right: 15px;
+  line-height: 25px;
+  color: #003e9f;
+  background: url(../images/bg-menu-sub-left.gif) left  no-repeat;
+}
+.submenuHover li a:hover {
+  color: #333333;
+  text-decoration: underline;
+}

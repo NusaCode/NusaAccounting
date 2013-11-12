@@ -1,0 +1,227 @@
+html, body, div, span, iframe, h1, h2, h3, h4, h5, h6, p, a, img, ol, ul, li{margin:0; padding:0; border:0; outline:0; font-size:100%; vertical-align:baseline; background:transparent}
+body{line-height:1}
+ol, ul{list-style:none}
+:focus{outline:0}
+body{font:13px/18px Arial,Helvetica,sans-serif}
+.header, .content, .footer{width:990px; margin:0 auto}
+#header-wrap{background:url(../images/page-bg-top.png) repeat-x 0 83px}
+#footer-wrap{background:url(../images/page-bg-fot.png) repeat-x}
+h1{font:lighter 36px/1.8 Georgia,"Times New Roman",Times,serif; letter-spacing:-0.01em; padding:5px; text-align:center}
+a{color:#1B6BBD; text-decoration:underline}
+a:hover{text-decoration:none}
+.main-nav li.active{background:url(../images/zoho-sprite.png)}
+.logo, .main-nav, .main-nav li{float:left}
+.logo{position:relative}
+.top-nav{float:right; padding-top:5px}
+.logo a, .main-nav ul, .main-nav li:hover ul, .main-nav ul li a{display:block}
+.logo img, .main-nav ul{position:absolute}
+.box{-moz-border-radius:5px; -webkit-border-radius:5px; border-radius:5px; -moz-box-shadow:0 1px 4px #DFDFDF; -webkit-box-shadow:0 1px 4px #DFDFDF; -khtml-border-radius:5px; border:1px solid #DFDFDF; background-color:#FFF}
+.box1{-moz-border-radius:5px; -webkit-border-radius:5px}
+.header{padding-top:10px}
+.logo a{height:63px; margin-bottom:10px; overflow:hidden; position:relative; width:131px}
+.logo img{top:0; left:0}
+.top-nav li{display:inline; padding-left:20px}
+.main-nav{border-left:1px solid #056FC3; width:100%}
+.main-nav li{font-weight:bold; margin:1px 0; display:inline; position:relative; border-right:1px solid #056FC3; cursor:pointer; z-index:999}
+.main-nav li a{color:#FFF; text-decoration:none; display:block; padding:7px 25px; #padding:7px 25px 8px}
+.main-nav li:hover, .main-nav ul{background:#FFF}
+.main-nav li.active{background-position:left -65px}
+.main-nav li.active a, .main-nav li:hover a{color:#000}
+.main-nav li.home a{padding-left:35px; padding-right:35px}
+.main-nav ul{top:34px; left:0; margin:-2px -1px; border:1px solid #056FC3; border-top:none; border-bottom:none; width:100%; z-index:999}
+.main-nav ul li{width:100%; padding:0; margin:0}
+.main-nav ul{display:none}
+.main-nav ul li a{border:none; border-bottom:1px solid #056FC3; color:#000; float:none; margin:0; padding:5px 10px; font-size:13px; font-weight:normal; display:block}
+.main-nav ul li a:hover{background:#E4F1FF}
+.signup-section{position:relative; background:#F7F7F7; margin-top:20px; padding:20px 25px 5px; min-height:55px}
+.signup-section h2{font-size:26px}
+.signup-section p{padding:10px 0}
+.signup-section a{position:absolute; right:70px; text-align:center; top:20px; width:130px; font-weight:bold; color:#D9011A; font-size:18px; text-decoration:none}
+.signup-section a span{float:left; font-size:13px; color:#000; font-weight:normal}
+#footer-wrap{ background-color:#D4E5FC; margin-top:20px; padding-top:20px}
+.footer ul{float:left; width:30%; margin-right:3%}
+.footer li{padding:5px 0}
+.footer h4{font-size:14px; border-bottom:1px dotted #000; margin-bottom:0}
+.footer li a{text-decoration:none}
+.footer li a:hover{text-decoration:underline}
+.copy-right{border-top:1px dotted #EFEFEF; margin-top:10px; padding:10px; text-align:center}
+.copy-right a{margin:0 15px}
+.clear:after{clear:both; content:'.'; display:block; visibility:hidden; height:0}
+.clear{display:inline-block}
+* html .clear{height:1%}
+.clear{display:block}
+*+html .clear{display:inline-block}
+.rss-icon a, .face-bk-icon a, .link-in-icon a, .twit-icon a, .video-comment p span a, .business-week-home, .theEcoLogo, .timeLogo, .nytLogo, .foxBizlogo, .wsjLogo, .signup-section a.signup-button, .apps span, .apps span.new, .zoho-mobile span, .cont-sec li{background-image:url(../images/zoho-sprite.png)}
+.sign-prod, .sign-in, #da2 span.down, #da2 span.up{background-image:url(../images/zoho-buttons.png)}
+
+.apps span, .video-comment p span a{position:absolute}
+.latest-box li a, .list-more a, .products li a{text-decoration:none}
+.latest-box li a:hover, .list-more a:hover, .products li a:hover{text-decoration:underline}
+.welcome-signin p{border-top:1px dotted #BFBFBF; font-size:15px; line-height:1.65; margin-top:11px; padding-top:10px; color:#9D454B}
+.welcome-signin span.user-name{color:#B34325}
+.sign-in{    background-position:left -48px;     float:left;     height:28px;     margin-left:15px;     width:82px}
+.login-sec{    float:right;     padding:0 0 0 20px; position:relative; z-index:9990}
+.login-sec img{    cursor:pointer;     margin:0 3px 0 10px}
+.google-apps{width:600px; float:left; margin-bottom:20px}
+.zoho-mobile{width:266px; margin-left:20px; float:left; margin-bottom:20px; min-height:65px}
+.zoho-mobile h2{margin-bottom:5px; padding-left:50px}
+.zoho-mobile a{color:#1B6BBD; margin-left:50px; position:static; text-decoration:underline}
+.zoho-mobile a:hover{text-decoration:none}
+.zoho-mobile span{background-position:-228px -474px; height:59px; left:21px; position:absolute; top:15px; width:32px}
+.content{line-height:22px}
+p.home-desc{padding:20px 0;line-height:30px;font-size:17px}
+img.az{    border: 1px solid #CBE5FF;
+           float: left;
+           margin: 20px 20px 20px 0;
+}
+img.az:hover{border:3px solid #666;margin:18px 18px 18px -2px}
+.products{width:988px; padding:15px 0}
+.products ul li{float:left; width:308px; padding-left:20px}
+li.border{border-left:1px dotted #E9E9E9; border-right:1px dotted #E9E9E9}
+.products li ul li a{color:#444; float:left; font-size:15px}
+.products li ul li a:hover{text-decoration:underline}
+h3{font-size:17px; margin-bottom:5px}
+.products li .apps li{padding:13px 0 0 0; width:153px; position:relative}
+.products li ul li.plugin{width:280px}
+.products li ul li.plugin span{background-position:-96px -280px}
+.apps span{width:20px; height:20px; left:0}
+.products .apps  span.new{background-position:-102px -352px; height:11px; left:85px; top:18px; position:absolute; width:29px}
+.apps a{padding-left:25px}
+.a5, .a6, .a7, .a8, .a14, .a15, .a16, .a17, .a18, .a21, .a22, .a23{margin-right:0}
+.a1 span{background-position:left -184px}
+.a2 span{background-position:-24px -184px}
+.a3 span{background-position:-48px -184px}
+.a4 span{background-position:-72px -184px}
+.a5 span{background-position:-96px -184px}
+.a6 span{background-position:left -208px}
+.a7 span{background-position:-24px -208px}
+.a8 span{background-position:-48px -208px}
+.a9 span{background-position:-72px -208px}
+.a11 span{background-position:left -232px}
+.a12 span{background-position:-24px -232px}
+.a13 span{background-position:-48px -232px}
+.a14 span{background-position:-72px -232px}
+.a15 span{background-position:-96px -232px}
+.a16 span{background-position:left -256px}
+.a17 span{background-position:-24px -256px}
+.a18 span{background-position:-48px -256px}
+.a19 span{background-position:-72px -256px}
+.a20 span{background-position:-96px -256px}
+.a21 span{background-position:left -280px}
+.a22 span{background-position:-24px -280px}
+.a23 span{background-position:-48px -280px}
+.a24 span{background-position:-72px -280px}
+.a25 span{background-position:-96px -160px}
+.a26 span{background-position:0 -336px}
+.a27 span{    background-position:-73px -160px}
+.a1n span{background-position:-50px -160px}
+.products .apps .a1n span.new{left:112px}
+
+.latest{margin:20px 0 0}
+.latestb{#margin:20px 0 0}
+.latest-box, .latest-boxl{border-right:1px dotted #E9E9E9; float:left; margin:0; padding:0 15px 0 20px; width:294px}
+.latest-box-comments{width:624px}
+.latest-boxl{border:none; margin:0 10px 0; min-height:244px; width:260px}
+.latest h3{font-size:17px; margin:0 0 5px; padding:0 0 10px}
+.latest-box li{list-style:none; padding-bottom:15px}
+.latest-box ul{margin:0; padding:0}
+.latest-box li span{display:block; font-size:11px}
+.latest-box li a, .list-more a{font-size:15px; line-height:18px; display:inline}
+.list-more{text-align:right; padding-right:11px}
+.list-more a{text-decoration:underline}
+.list-more a:hover{text-decoration:none}
+.latest-box2{float:left;}
+.latest-box2 ul{margin:0 0 0 10px; padding:0}
+.latest-box2 li:first-child{padding-left:0;border:none}
+.latest-box2 li{float:left; list-style:none outside none; padding:10px 10px 24px 20px;width:215px;border-left:1px dotted #ddd}
+.latest-box2 li a{display:block;text-decoration:none;margin-bottom:10px}
+.latest-box2 .list-more{min-height:0; padding-top:0; border:none}
+.latest-box2 .list-more a{display:inline}
+.twitt-block{margin:0 10px 10px -20px; float:left; padding:20px 20px 10px; width:594px; min-height:422px}
+.stayConnectedBlock{    border-bottom:1px dotted #E9E9E9;     float:right;     margin:-42px 0 25px;     width:100%}
+.header .stayConnectedBlock{    border:none;     padding-top:5px;     position:absolute; right:1px; top:70px;     width:216px}
+.stayConnectedBlock p{float:left; margin:6px 0 0 305px; padding:0; width:150px}
+.stayConnectedBlock ul{float:left; margin:0; padding:5px 0 0; position:relative}
+.header .stayConnectedBlock p{    float:left;     margin:10px 0;     width:80px}
+.stayConnectedBlock li{float:left; list-style:none; width:auto; padding-bottom:5px}
+.stayConnectedBlock li a{float:left; list-style:none; width:24px; height:24px; margin:0 0 0 10px}
+.rss-icon a{background-position:left -104px}
+.twit-icon a{background-position:-29px -104px}
+.face-bk-icon a{background-position:-58px -104px}
+.link-in-icon a{background-position:-88px -104px }
+.business-week-home, .theEcoLogo, .timeLogo, .nytLogo, .foxBizlogo, .wsjLogo{cursor:pointer}
+.business-week-home{background-position:left -368px; height:20px; width:98px}
+.theEcoLogo{background-position:left -392px; height:42px; width:122px}
+.timeLogo{background-position:left -440px; height:38px; width:96px}
+.wsjLogo{background-position:left -480px; width:51px; height:55px}
+.nytLogo{background-position:left -536px; height:19px; width:123px}
+.foxBizlogo{background-position:left -560px; height:46px; width:92px}
+.video-comment .video{background:#EBF6FF; float:left; margin:0 15px 0 0; padding:2px; width:184px}
+.video-comment p{position:relative; font-size:11px; margin:5px; padding:0 45px 0 0; line-height:1.5}
+.video-comment p span a{background-position:-88px -304px; height:36px; right:5px; text-indent:-999em; bottom:7px; width:25px}
+.video-comment .list-more a{padding-top:10px; margin-right:15px; float:right}
+#TB_overlay{background:#666; opacity:.8; filter:alpha(opacity=80)}
+#TB_window{font:12px Arial,Helvetica,sans-serif; color:#333}
+#TB_secondLine{font:10px Arial,Helvetica,sans-serif; color:#666}
+#TB_window a:link{color:#666}
+#TB_window a:visited{color:#666}
+#TB_window a:hover{color:#000}
+#TB_window a:active{color:#666}
+#TB_window a:focus{color:#666}
+#TB_overlay{position:fixed; z-index:9995; top:0; left:0; height:100%; width:100%}
+.TB_overlayBG{background-color:#000; filter:alpha(opacity=75); -moz-opacity:.75; opacity:.75}
+#TB_window{position:fixed; background:#FFF; z-index:9999; color:#000; display:none; border:4px solid #525252; text-align:left; top:50%; left:50%}
+#TB_window img#TB_Image{display:block; margin:15px 0 0 15px; border-right:1px solid #CCC; border-bottom:1px solid #CCC; border-top:1px solid #666; border-left:1px solid #666}
+#TB_caption{height:25px; padding:7px 30px 10px 25px; float:left}
+#TB_closeWindow{height:25px; padding:11px 25px 10px 0; float:right}
+#TB_closeAjaxWindow{padding:7px 10px 5px 0; margin-bottom:1px; text-align:right; float:right}
+#TB_ajaxWindowTitle{float:left; padding:7px 0 5px 10px; margin-bottom:1px}
+#TB_title{background-color:#E8E8E8; height:27px}
+#TB_ajaxContent{clear:both; padding:2px 15px 15px 15px; overflow:auto; text-align:left; line-height:1.4em}
+#TB_ajaxContent.TB_modal{padding:15px}
+#TB_ajaxContent p{padding:5px 0 5px 0}
+#TB_load{position:fixed; display:none; height:13px; width:208px; z-index:103; top:50%; left:50%; margin:-6px 0 0 -104px}
+#TB_HideSelect{z-index:99; position:fixed; top:0; left:0; background-color:#FFF; border:none; filter:alpha(opacity=0); -moz-opacity:0; opacity:0; height:100%; width:100%}
+#TB_iframeContent{clear:both; border:none; margin-bottom:-1px; margin-top:1px; _margin-bottom:1px}
+#baihuilink{left: 200px;position: absolute;top: 5px}
+#baihuilink .baihui{background:url(../images/baihui.gif) no-repeat; float:left; cursor:pointer; float:left; height:25px; margin:32px 0 0; width:200px;text-indent: -999em}
+.twL li{float:left; padding:0 15px; position:relative; width:265px; margin-bottom:37px}
+.latest-box .twL li span, .latest-box .twL li span a{display:inline; font-size:13px; font-style:italic; font-weight:normal; margin-left:3px}
+.latest-box .twL li a{font-size:12px; font-weight:bold}
+/* New Banner Styles */
+.coda-slider, .coda-slider .panel{width:990px}
+.coda-nav ul li{float:left}
+.coda-nav ul li a.current{color:#09325f}
+.coda-slider p.loading{padding:140px 20px; text-align:center}
+.coda-nav ul li a{    background:#fff;     color:#A3C9EE;     float:left;     font-size:18px;     font-weight:normal;     margin:15px 54px;     padding:0 15px;     text-decoration:none}
+.coda-nav ul li a:hover{color:#444}
+.coda-slider-wrapper{    -moz-border-radius:10px; -webkit-border-radius:10px;     background:url(../images/banner-bg.png) repeat-x #61b2e6;  border:1px solid #4393E0;  margin:0 auto;  min-height:414px;  width:990px}
+.coda-slider{float:left; overflow:hidden; padding-bottom:25px; height:341px!important; position:relative}
+.coda-slider .panel{float:left}
+.coda-slider .panel-container{position:relative}
+.coda-nav{float:left; width:990px}
+.cont-sec{color:#fff; float:left; margin:40px 0 0 40px; width:315px}
+.cont-sec h2{ border-bottom:1px dotted;  font-size:30px;  line-height:30px;  margin-bottom:10px;  padding-bottom:5px;  text-transform:uppercase}
+.cont-sec h3{font-size:17px}
+.mail-sec h3{font-size:16px}
+.cont-sec ul{margin:22px 0}
+.cont-sec li{ background-position:left -134px; background-repeat:no-repeat;  display:block;  margin-bottom:15px;  padding-left:20px;font-size:12px}
+.mail-sec li{ background: none; line-height: 25px; padding-left: 0}
+.ban-sec{ float:right;  margin:19px 15px 0 0}
+.left-side{float:left; margin-right:-20px}
+#dd{ -moz-border-radius:7px; -webkit-border-radius:7px; -webkit-box-shadow:0 5px 15px -5px #666;  -moz-box-shadow:0 5px 15px -5px #666;  background:none repeat scroll 0 0 #FFF;  border:3px solid #A65057;  position:absolute;  z-index:9999; right:0; padding:10px; margin-top:30px}
+.sign-out #dd{ padding:5px 15px 15px;  width:280px}
+.welcome-signin{ float:left;  font-size:16px;  padding:5px 0 0 5px}
+.sign-out{ float:left;  margin-left:10px;  margin-top:-5px}
+.signup-button{ border-bottom:1px dotted;  color:#DB2020;  float:left;  margin:5px 0 5px 20px;  text-decoration:none;  text-transform:uppercase}
+span.up, span.down{float:left;  width:99px; margin-right:5px; z-index:99}
+.sign-in, span.up, span.down{cursor:pointer}
+span.up{background-position:left -112px; background-repeat:no-repeat;  height:30px; width:100px}
+span.down{background-position:left -80px;  height:28px; width:100px; background-repeat:no-repeat}
+a.headerlink1{ -moz-border-radius:7px; -webkit-border-radius:7px;  background:#111;  color:#fff;  padding:5px 10px;  text-decoration:none}
+.sign-prod{ display:block;  height:46px;  width:149px}
+.non{display:none}
+.learn-more{padding-top:10px}
+.learn-more a{color:#fff}
+.welcome-msg{float:left}
+/* New Banner Styles End */

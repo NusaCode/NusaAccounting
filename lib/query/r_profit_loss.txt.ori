@@ -1,0 +1,169 @@
+SELECT 	*
+FROM    (
+	SELECT  coa_code, coa_name, FORMAT(IFNULL((balance+total),0),2) balance
+	FROM    (
+		 SELECT a.coa_code, a.coa_name, 
+			FORMAT((IFNULL(a.opening_balance,0)),2) balance
+		 FROM 	coa_#@id_org#@ a
+		 WHERE 	LOWER(a.coa_jenis) IN ('r')
+		 AND	NOT EXISTS (SELECT b.* FROM coa_#@id_org#@ b WHERE a.`coa_code` = b.`coa_parent`)
+		)xr LEFT OUTER JOIN
+		(
+		SELECT 	coa,(SUM(debit)+SUM(credit))total
+		FROM 	`transaction`
+		WHERE 	id_journal IN (SELECT id_journal FROM journal 
+					WHERE id_org =#@id_org#@ AND posting = 1
+					AND CONCAT ((SUBSTR(trans_date,1,4)),(SUBSTR(trans_date,6,2))) <='#@yyyymm#@')
+		AND 	coa IN (  SELECT a.coa_code
+				  FROM 	 coa_#@id_org#@ a
+				  WHERE  LOWER(a.coa_jenis) IN ('r')
+				  AND	 NOT EXISTS (SELECT b.* FROM coa_#@id_org#@ b WHERE a.`coa_code` = b.`coa_parent`)
+				)
+		GROUP BY coa
+		)yr ON xr.coa_code = yr.coa
+	UNION 	ALL
+	SELECT	'SUB TOTAL' coa_code, 'PENDAPATAN' coa_name, 
+		FORMAT(IFNULL((SELECT SUM(balance) 
+			       FROM (	SELECT 	balance
+					FROM    (
+						SELECT  coa_code, coa_name, (balance+total) balance
+						FROM    (
+							 SELECT a.coa_code, a.coa_name, 
+								FORMAT((IFNULL(a.opening_balance,0)),2) balance
+							 FROM 	coa_#@id_org#@ a
+							 WHERE 	LOWER(a.coa_jenis) IN ('r')
+							 AND	NOT EXISTS (SELECT b.* FROM coa_#@id_org#@ b WHERE a.`coa_code` = b.`coa_parent`)
+							)xr LEFT OUTER JOIN
+							(
+							SELECT 	coa,(SUM(debit)+SUM(credit))total
+							FROM 	`transaction`
+							WHERE 	id_journal IN (SELECT id_journal FROM journal 
+										WHERE id_org =#@id_org#@ AND posting = 1
+										AND CONCAT ((SUBSTR(trans_date,1,4)),(SUBSTR(trans_date,6,2))) <='#@yyyymm#@')
+							AND 	coa IN (  SELECT a.coa_code
+									  FROM 	 coa_#@id_org#@ a
+									  WHERE  LOWER(a.coa_jenis) IN ('r')
+									  AND	 NOT EXISTS (SELECT b.* FROM coa_#@id_org#@ b WHERE a.`coa_code` = b.`coa_parent`)
+									)
+							GROUP BY coa
+							)yr ON xr.coa_code = yr.coa
+						)rev
+				     )br),0),2) balance
+	LIMIT 	1
+	ORDER 	
+	BY 	coa_code
+	)revenue
+UNION ALL
+SELECT 	*
+FROM    (
+	SELECT  coa_code, coa_name, FORMAT(IFNULL((balance+total),0),2) balance
+	FROM    (
+		 SELECT a.coa_code, a.coa_name, 
+			FORMAT((IFNULL(a.opening_balance,0)),2) balance
+		 FROM 	coa_#@id_org#@ a
+		 WHERE 	LOWER(a.coa_jenis) IN ('e')
+		 AND	NOT EXISTS (SELECT b.* FROM coa_#@id_org#@ b WHERE a.`coa_code` = b.`coa_parent`)
+		)xe LEFT OUTER JOIN
+		(
+		SELECT 	coa,(SUM(debit)+SUM(credit))total
+		FROM 	`transaction`
+		WHERE 	id_journal IN (SELECT id_journal FROM journal 
+					WHERE id_org =#@id_org#@ AND posting = 1
+					AND CONCAT ((SUBSTR(trans_date,1,4)),(SUBSTR(trans_date,6,2))) <='#@yyyymm#@')
+		AND 	coa IN (  SELECT a.coa_code
+				  FROM 	 coa_#@id_org#@ a
+				  WHERE  LOWER(a.coa_jenis) IN ('e')
+				  AND	 NOT EXISTS (SELECT b.* FROM coa_#@id_org#@ b WHERE a.`coa_code` = b.`coa_parent`)
+				)
+		GROUP BY coa
+		)ye ON xe.coa_code = ye.coa
+	UNION 	ALL
+	SELECT	'SUB TOTAL' coa_code, 'BEBAN' coa_name, 
+		FORMAT(IFNULL((SELECT SUM(balance) 
+			       FROM (	SELECT 	balance
+					FROM    (
+						SELECT  coa_code, coa_name, (balance+total) balance
+						FROM    (
+							 SELECT a.coa_code, a.coa_name, 
+								FORMAT((IFNULL(a.opening_balance,0)),2) balance
+							 FROM 	coa_#@id_org#@ a
+							 WHERE 	LOWER(a.coa_jenis) IN ('e')
+							 AND	NOT EXISTS (SELECT b.* FROM coa_#@id_org#@ b WHERE a.`coa_code` = b.`coa_parent`)
+							)xe LEFT OUTER JOIN
+							(
+							SELECT 	coa,(SUM(debit)+SUM(credit))total
+							FROM 	`transaction`
+							WHERE 	id_journal IN (SELECT id_journal FROM journal 
+										WHERE id_org =#@id_org#@ AND posting = 1
+										AND CONCAT ((SUBSTR(trans_date,1,4)),(SUBSTR(trans_date,6,2))) <='#@yyyymm#@')
+							AND 	coa IN (  SELECT a.coa_code
+									  FROM 	 coa_#@id_org#@ a
+									  WHERE  LOWER(a.coa_jenis) IN ('e')
+									  AND	 NOT EXISTS (SELECT b.* FROM coa_#@id_org#@ b WHERE a.`coa_code` = b.`coa_parent`)
+									)
+							GROUP BY coa
+							)ye ON xe.coa_code = ye.coa
+						)ex
+				     )br),0),2) balance
+	LIMIT 	1
+	ORDER 	
+	BY 	coa_code
+	)expense
+UNION ALL
+SELECT	'TOTAL' coa_code, 'PROFIT / LOSS' coa_name, 
+	FORMAT(
+	(SELECT IFNULL((SELECT SUM(balance) 
+				FROM (	SELECT 	balance
+					FROM    (
+						SELECT  coa_code, coa_name, (balance+total) balance
+						FROM    (
+							SELECT 	a.coa_code, a.coa_name, 
+								FORMAT((IFNULL(a.opening_balance,0)),2) balance
+							FROM 	coa_#@id_org#@ a
+							WHERE 	LOWER(a.coa_jenis) IN ('r')
+							AND	NOT EXISTS (SELECT b.* FROM coa_#@id_org#@ b WHERE a.`coa_code` = b.`coa_parent`)
+							)xr LEFT OUTER JOIN
+							(
+							SELECT 	coa,(SUM(debit)+SUM(credit))total
+							FROM 	`transaction`
+							WHERE 	id_journal IN (SELECT id_journal FROM journal 
+										WHERE id_org =#@id_org#@ AND posting = 1
+										AND CONCAT ((SUBSTR(trans_date,1,4)),(SUBSTR(trans_date,6,2))) <='#@yyyymm#@')
+							AND 	coa IN (  SELECT a.coa_code
+									  FROM 	 coa_#@id_org#@ a
+									  WHERE  LOWER(a.coa_jenis) IN ('r')
+									  AND	 NOT EXISTS (SELECT b.* FROM coa_#@id_org#@ b WHERE a.`coa_code` = b.`coa_parent`)
+									)
+							GROUP BY coa
+							)yr ON xr.coa_code = yr.coa
+						)rev
+		)br),0) balance
+	 LIMIT 	1) - 
+	 (SELECT IFNULL((SELECT SUM(balance) 
+			        FROM (	SELECT 	balance
+					FROM    (
+						SELECT  coa_code, coa_name, (balance+total) balance
+						FROM    (
+							 SELECT a.coa_code, a.coa_name, 
+								FORMAT((IFNULL(a.opening_balance,0)),2) balance
+							 FROM 	coa_#@id_org#@ a
+							 WHERE 	LOWER(a.coa_jenis) IN ('e')
+							 AND	NOT EXISTS (SELECT b.* FROM coa_#@id_org#@ b WHERE a.`coa_code` = b.`coa_parent`)
+							)xe LEFT OUTER JOIN
+							(
+							SELECT 	coa,(SUM(debit)+SUM(credit))total
+							FROM 	`transaction`
+							WHERE 	id_journal IN (SELECT id_journal FROM journal 
+										WHERE id_org =#@id_org#@ AND posting = 1
+										AND CONCAT ((SUBSTR(trans_date,1,4)),(SUBSTR(trans_date,6,2))) <='#@yyyymm#@')
+							AND 	coa IN (  SELECT a.coa_code
+									  FROM 	 coa_#@id_org#@ a
+									  WHERE  LOWER(a.coa_jenis) IN ('e')
+									  AND	 NOT EXISTS (SELECT b.* FROM coa_#@id_org#@ b WHERE a.`coa_code` = b.`coa_parent`)
+									)
+							GROUP BY coa
+							)ye ON xe.coa_code = ye.coa
+						)ex
+				     )br),0) balance
+	 LIMIT 	1) 
+	 ,2) balance

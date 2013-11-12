@@ -1,0 +1,45 @@
+SELECT 
+            a.coa_code,
+            a.coa_name,
+            a.`balance`,
+            a.current_balance,
+            a.debit AS debit,
+            a.credit AS credit,
+            ((a.current_balance + a.credit) - a.debit) AS total
+        FROM    
+            (
+             SELECT 
+                c.`coa_code`,
+                c.`coa_name`,
+                c.`balance`,
+                IFNULL(c.`opening_balance`, 0) AS current_balance,
+                IFNULL((
+                    SELECT SUM(t.debit)
+                    FROM `transaction` t,
+                        journal j
+                    WHERE t.coa = c.`coa_code`
+                        AND t.id_journal = j.id_journal
+                        AND j.posting = 1
+                        AND j.id_org = #@id_org#@
+                        AND CONCAT ((SUBSTR(`j`.`trans_date`,1,4)),(SUBSTR(`j`.`trans_date`,6,2))) <'#@yyyymm#@'
+                    GROUP BY c.`coa_code`
+                ), 0) AS debit,
+                IFNULL((
+                    SELECT SUM(t.credit)
+                    FROM `transaction` t,
+                        journal j
+                    WHERE t.coa = c.`coa_code`
+                        AND t.id_journal = j.id_journal
+                        AND j.posting = 1
+                        AND j.id_org = #@id_org#@
+                        AND CONCAT ((SUBSTR(`j`.`trans_date`,1,4)),(SUBSTR(`j`.`trans_date`,6,2))) <'#@yyyymm#@'                       
+                    GROUP BY c.`coa_code`
+                ), 0) AS credit
+             FROM
+                coa_#@id_org#@ c
+             WHERE 
+                NOT EXISTS
+                    (SELECT * FROM
+                    (SELECT DISTINCT coa_parent FROM coa_#@id_org#@) cp WHERE c.coa_code = cp.coa_parent)
+                AND c.`coa_jenis` IN('l','o','r') AND c.`coa_code` = '#@coa_code#@'
+            ) AS a

@@ -1,0 +1,42 @@
+
+#banner {
+	height: 29px;
+	margin-bottom: 20px;
+	display: block;
+	background: url(../images/bg-header.png) repeat-x;
+}
+
+#bannerLogo {
+	width: auto;
+	height: auto;
+	top: 0px;
+}
+
+#bannerCustomImage {
+	display: none;
+}
+
+#topLinks {
+	height: 12px;
+	margin: 0;
+	padding: 0;
+	position: absolute;
+	right: 20px;
+	top: 15px;
+	text-align: right;
+	color: #FFFFFF;
+}
+
+#top-search input {
+	border: 1px solid #666666;
+}
+#top-search input[type=text] {
+	padding: 2px;
+}
+#top-search input[type=submit] {
+	padding: 1px;
+}
+
+#top-logout {
+
+}

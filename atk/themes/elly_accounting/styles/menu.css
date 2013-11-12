@@ -1,0 +1,161 @@
+#mainMenu {
+	height: 35px;
+	margin: 0px;
+	padding: 0px;
+	padding-left: 30px;
+	display: block;
+	background: url(../images/bg-menu-top.gif) 0px -55px;
+	border-top: 1px solid #999999;
+	border-bottom: 1px solid #999999;
+}
+
+#box-menu a:hover {
+	text-decoration: none;
+}
+
+#mainMenu li {
+	margin: 0px;
+	padding: 0px;
+	float: left;
+	display: inline;
+	margin: 0px;
+	text-decoration: none;
+}
+
+.menuItemLevel1 a {
+	height: 35px;
+	display: block;
+	margin: 0px;
+	padding: 0px;
+	padding: 0px 15px 0px 15px;
+	background: url('../images/bg-menu-top-li.gif') 0px -7px;
+	color: #fefefe;
+}
+
+.menuItemLevel1 a span {
+	margin: 0px;
+	padding: 0px;
+	padding-top: 0px;
+	font-size: 12px;
+	font-weight: bold;
+	/* text-transform: uppercase; */
+	line-height: 35px;
+	color: #fefefe;
+}
+
+#mainMenu li.menuItemLevel1-active a, 
+#mainMenu li.menuItemLevel1 a:hover {
+	background-position: 0px -55px;
+}
+
+.submenuHover {
+	margin: 0px;
+	padding: 0px;
+	padding-left: 30px;
+	display: block;
+	font-size: 0.9em;
+	background: #e9e9e9;
+}
+
+.submenuHover li {
+	display: inline;
+}
+
+.submenuHover li a, 
+.submenuHover li  a:visited, 
+.submenuHover li  a:active {
+	padding-left: 15px;
+	padding-right: 15px;
+	line-height: 25px;
+	color: #003e9f;
+	background: url(../images/bg-menu-sub-left.gif) left no-repeat;
+}
+.submenuHover li a:hover {
+	color: #333333;
+	text-decoration: underline;
+}
+
+
+
+
+/*=====================================================================================================*/
+/* Targeting both first and second level menus */
+
+#nav li {
+    list-style:none;
+    float: left;
+    position: relative;
+}
+#nav li a {
+    display: block;
+    padding: 8px 12px;
+    text-decoration: none;
+}
+#nav li a:hover {
+
+    background-color:red;
+    color:#FFF;
+    opacity:1;
+}
+
+/* Targeting the first level menu */
+#nav {  
+    top:30px;
+    min-width:850px;
+    background:#fff;
+    opacity:0.5;
+    display: block;
+    height: 34px;
+    z-index: 100;
+    /*position: absolute;*/
+}
+#nav > li > a {
+}
+
+/* Targeting the second level menu */
+#nav li ul {
+    color: #333;
+    display: none;
+    position: absolute; 
+    width:850px;
+}
+#nav li ul li {
+    display: inline;
+}
+#nav li ul li a {
+    background: #fff;
+    border: none;
+    line-height: 34px;
+    margin: 0;
+    padding: 0 8px 0 10px;
+}
+#nav li ul li a:hover {
+    background-color:red;
+    color:#FFF;
+    opacity:1;
+}
+
+/* Third level menu */
+#nav li ul li ul{
+    top: 0;
+}
+ul.child {
+    background-color:#FFF;  
+}
+/* A class of current will be added via jQuery */
+#nav li.current > a {
+    background: #f7f7f7;
+    float:left;
+}
+/* CSS fallback */
+#nav li:hover > ul.child {
+    left:0;
+    top:30px;
+    display:inline;
+    position:absolute;
+    text-align:left;
+}
+#nav li:hover > ul.grandchild  {
+    display:block;
+}
+

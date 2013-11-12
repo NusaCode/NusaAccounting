@@ -1,0 +1,14 @@
+SELECT `report_journal`.`v_no`, `report_journal`.`journal_type`,
+report_journal.trans_date, `report_journal`.`coa`,
+`report_journal`.`debit`, `report_journal`.`credit`,
+`report_journal`.`desc`
+FROM (`report_journal`)
+WHERE ((report_journal. id_org = #@id_org#@))
+AND (id_journal =#@trans1#@)
+AND (id_journal =#@trans2#@)
+AND ((periode_month >=#@month#@ OR periode_month LIKE %#@month#@%) AND (periode_year >=#@year#@ OR periode_year LIKE %#@year#@%))
+AND ((periode_month <=#@month2#@ OR periode_month LIKE %#@month2#@%) AND (periode_year <=#@year2#@ OR periode_year LIKE %#@year2#@%))
+ORDER BY LOWER(report_journal.trans_date) DESC,
+LOWER(report_journal.v_no) DESC,
+LOWER(report_journal.debit) DESC,
+LOWER(report_journal.credit) DESC;

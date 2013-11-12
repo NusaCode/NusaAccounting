@@ -1,0 +1,50 @@
+
+
+#mainTabs {
+	width: 100%;
+	height: 21px;
+	margin: 0px;
+	padding: 0px;
+	margin-top: -0.56em;
+	padding-left: 30px;
+	left: -30px;
+	position: relative;
+	display: block;
+	background: #FFFFFF;
+	list-style: none;
+}
+
+#mainTabs li {
+	width: 132px;
+	height: 100%;
+	margin: 0px;
+	padding: 0px;
+	float: left;
+	display: block;
+	text-align: center;
+	font-weight: bold;
+	line-height: 21px;
+	color: #414141;
+	cursor: default;
+}
+
+.activetab, 
+.passivetab {
+	background: url(../images/tab-active.gif) no-repeat center top !important;
+}
+
+.passivetab {
+  background: url(../images/tab-inactive.gif) no-repeat center top !important;
+}
+
+.activetab, .passivetab a {
+  display: block;
+  width: 132px;
+}
+
+.tabsContent {
+  clear: both;
+}
+
+
+

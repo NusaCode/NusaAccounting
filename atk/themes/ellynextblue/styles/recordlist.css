@@ -1,0 +1,118 @@
+
+.recordList {
+	text-align: left;
+}
+
+.recordListHeader {
+	background: #003e9f url(../images/bg-menu-top.gif) 0px -55px;
+	border-bottom: 1px solid #ddd;
+	font-weight: bold;
+}
+
+.recordListHeader th,
+.recordListSearch th {
+	line-height: 2em;
+	padding: 1px 6px;
+	border-left: 1px solid #dddddd;
+	white-space: nowrap;
+}
+
+.recordListHeader th {
+	border: 0;
+}
+
+.recordListHeader th,
+.recordListHeader th a,
+.recordListHeader th label {
+	color: #ffffff;
+	text-decoration: none;
+}
+.recordListHeader th a {
+	padding-right: 14px;
+	background: url('../icons/recordlist/order.png') -12px right no-repeat;
+}
+
+.recordListHeader th a:hover,
+.recordListHeader th a:active {
+	text-decoration: underline;
+	background-position: 50% right;
+}
+
+.recordListSearch th,
+.recordListTotal th {
+	white-space: nowrap;
+	border-top: 1px solid #ffffff;
+	border-bottom: 1px solid #999999;
+	background: #d4d4d4 url('../images/bg-recordlist-th-search.gif');
+}
+
+.recordListSearch th input, 
+.recordListSearch th select {
+	width: 95%;
+	font-weight: normal;
+	background-color: #ffffff;
+}
+
+.recordListSearch th input[type='submit'] {
+	width: 50px;
+	height: 22px;
+	margin-right: 5px;
+	float: left;
+	line-height: 18px;
+}
+.recordListSearch th input[type='submit']:hover {
+	background-position: 0px -31px;
+}
+.recordListSearch th input[type='submit']:focus,
+.recordListSearch th input[type='submit']:active {
+	background-position: 0px -62px;
+}
+
+.recordListSearch th br {
+	display: none;
+}
+
+.recordListSearch th a {
+	width: 20px;
+	height: 22px;
+	text-indent: 20px;
+	display: block;
+	float: left;
+	overflow: hidden;
+	background: url('../icons/recordlist/search.png') 0 0 no-repeat;
+}
+
+.recordListRecord td,
+.recordListTotal th {
+	line-height: 2.4em;
+	border-left: 1px solid #dddddd;
+	padding: 0 6px;
+	border-top: 1px solid #ffffff;
+	border-bottom: 1px solid #e1e1e1;
+}
+
+.recordListRecord td.recordListTdLast,
+.recordListSearch th.recordListSearchThLast {
+	border-right: 1px solid #dddddd;
+}
+
+
+.recordListRecord.row1 {
+  background-color: #f7f7f7;
+}
+
+.recordListRecord.row2 {
+  background-color: #ececec;
+}
+
+.recordListRecord td img {
+	vertical-align: middle;
+}
+
+.recordListTotal th.recordListTotalNum {
+	border-top: 2px solid #999999;
+}
+
+.multirecord-actions-links {
+	padding-top: 8px;
+}

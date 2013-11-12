@@ -1,0 +1,29 @@
+SELECT j.`id_journal` AS `id_journal`,
+      `j`.`v_no` AS `v_no`,
+      `j`.`journal_type` AS `journal_type`,
+      `j`.`trans_date` AS `trans_date`,
+      `tc`.`coa` AS `coa`,
+      `tc`.`desc` AS `desc`,
+      FORMAT(`tc`.`debit`,2) AS `debit`,
+      FORMAT(`tc`.`credit`,2) AS `credit`,
+      YEAR(`j`.`trans_date`) AS `periode_year`,
+      MONTH(`j`.`trans_date`) AS `periode_month`,
+      `j`.`posting` AS `posting`,
+      IF(`j`.`posting` = 0, "Not Posted Yet",
+      IF(`j`.`posting` = 1, "Posted",
+      IF(`j`.`posting` = 2, "No Transaction Found", "Not Balanced Yet"))) AS `posting_desc`, 
+      `j`.`id_org` AS `id_org`
+FROM (SELECT `jt`.`code` AS `journal_type`, jr.* FROM journal jr LEFT OUTER JOIN journal_type jt
+        ON jr.`id_journal_type` = jt.`id`) j,
+     (SELECT t.* FROM
+        (SELECT jnl.`id_journal` AS `id_journal`, `tx`.`coa` AS `coa`, `tx`.`desc` AS `desc`,
+            `tx`.`debit` AS `debit`, `tx`.`credit` AS `credit`
+          FROM journal jnl LEFT OUTER JOIN `transaction` tx ON jnl.`id_journal` = tx.`id_journal`) t
+          LEFT OUTER JOIN coa_#@id_org#@ c ON t.`coa` = c.`coa_code`) tc
+WHERE j.`id_journal` = tc.`id_journal`
+      AND j.`id_org` = #@id_org#@
+      AND j.`posting` IN(#@posting#@)
+      AND YEAR(`j`.`trans_date`) BETWEEN #@year#@ AND #@year2#@
+      AND MONTH(`j`.`trans_date`) BETWEEN #@month#@ AND #@month2#@
+      AND j.`id_journal` BETWEEN #@trans1#@ AND #@trans2#@
+ORDER BY `j`.`trans_date` DESC,`j`.`v_no` DESC, tc.debit DESC, tc.credit DESC

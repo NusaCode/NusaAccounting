@@ -1,0 +1,17 @@
+/* 
+    Document   : ellyBlueTop
+    Created on : Oct 8, 2012, 5:57:05 PM
+    Author     : Jeffry
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+@import "ellyRed.css";
+
+.panel-body {
+    overflow: hidden;
+}
+
+.layout-body {
+    background: transparent ! important;
+}

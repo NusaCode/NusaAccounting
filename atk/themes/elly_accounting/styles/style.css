@@ -1,0 +1,233 @@
+* {
+	font-size: 12px;
+	font-family: 'Trebuchet MS';
+	color: #515151;
+}
+
+body {
+	margin: 0px;
+	padding: 0px;
+	background: url(../images/bg-header.png) top repeat-x;
+}
+
+.atkAttrRowHidden {
+	display: none !important;
+}
+
+a {
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: underline;
+}
+
+img {
+	border: 0;
+}
+
+table,
+form {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	border-collapse: collapse;
+}
+
+input {
+	padding: 1px 2px;
+	font-size: 0.9em;
+	border: 1px #d1d1d1 solid;
+	background-color: #ffffff;
+}
+
+select, 
+textarea {
+	padding: 1px 2px; /* Makes input and select same size in FF */
+	font-size: 0.9em;
+	font-weight: normal;
+	border: 1px #e1e1e1 solid;
+}
+
+select, 
+option {
+	margin: 0;
+	padding-right: 0;
+}
+
+input[type='submit'],
+input[type='button'] {
+	padding: 2px 5px;
+	border-width: 0;
+	border: 1px solid #cdcdcd;
+	text-align: center;
+	font-weight: bold;
+	background: url('../images/bg-button.gif');
+}
+input[type='submit']:hover,
+input[type='button']:hover {
+	background-position: 0px -31px;
+}
+input[type='submit']:active,
+input[type='button']:active {
+	background-position: 0px -62px;
+}
+
+.clear {
+	clear: both;
+}
+
+
+
+/* *********************************************
+   General page setup
+*/
+
+#page {
+}
+
+#container, 
+#footer{
+}
+
+#container {
+}
+
+
+
+/* *********************************************
+   Box titles & content
+*/
+
+.box-title {
+	margin: 1.68em 0 0.56em 0;
+	margin-left: 30px;
+	font-size: 1.4em;
+	font-weight: bold;
+	color: #003e9f;
+	/*text-transform: uppercase;*/
+}
+
+.box, 
+.box-dispatch,
+.box-content {
+	margin: 0 0 0.56em 0;
+	padding: 0.56em 0;
+	display: block;
+	clear: both;
+}
+
+.box-content {
+	padding-left: 30px;
+	background: #efefef;
+}
+
+
+
+/* *********************************************
+   Admin 
+*/
+
+.list-header a {
+	margin: 0.56em 0;
+}
+
+a.atkonetomanyrelation,
+.list-header a.add,
+.list-header a.export,
+#top-logout a,
+a.pim,
+a.userprefs,
+a.setup,
+.helplink a {
+	padding: 2px 0 1px 26px;
+	line-height: 20px;
+	background-position: 0 0;
+	background-repeat: no-repeat;
+}
+
+a.atkonetomanyrelation,
+.list-header a.add {
+	background-image: url('../icons/recordlist/add.png');
+}
+
+.list-header a.export {
+	background-image: url('../icons/recordlist/export.png');
+}
+
+#top-logout a {
+	background-image: url('../icons/links/logout.png');
+}
+#top-logout a:hover {
+	background-position: 0 -20px;
+}
+
+a.pim {
+	background-image: url('../icons/links/pim.png');
+}
+
+a.userprefs {
+	background-image: url('../icons/links/userprefs.png');
+}
+
+a.setup {
+	background-image: url('../icons/links/setup.png');
+}
+
+.helplink a {
+	margin-top: -0.28em;
+	margin-right: 30px;
+	float: right;
+	position: relative;
+	top: -30px;
+	background-image: url('../icons/links/help.png');
+}
+
+
+
+/* *********************************************
+   Editform & viewform columns
+*/
+
+#editform, 
+#viewform {
+	width: 100%;
+}
+
+.field {
+	padding: 2px 0;
+}
+
+.fieldlabel,
+.errorlabel {
+	width: 150px;
+	float: left;
+	text-align: left;
+}
+
+.atkDateAttribute.button.atkbutton {
+  width: 22px;
+  height: 22px;
+  background: white url('../images/calendar.gif') 50% 50% no-repeat;
+  cursor: pointer;
+}
+.atkDateAttribute.button.atkbutton:hover,
+.atkDateAttribute.button.atkbutton:active {
+	border-color: #999999;
+}
+
+.error {
+	padding-left: 55px;
+	background: url('../images/keys.gif') left top no-repeat;
+}
+
+.error b {
+	color: #991111;
+}
+
+.buttons {
+	padding-top: 1.68em;
+	padding-left: 152px;
+}
+
+
+

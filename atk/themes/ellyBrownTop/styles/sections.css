@@ -1,0 +1,21 @@
+a.atksection {
+	height: 14px;
+	margin-top: 10px;
+	margin-bottom: 5px;
+	padding: 2px;
+	padding-left: 16px;    
+	display: block;
+	font-size: 1.2em;
+	font-weight: bold;
+	text-decoration: none;
+	color: #003e9f;
+	white-space: nowrap;
+}
+
+a.openedSection {
+	background: url(../images/sub_blue_remove.png) 0 50% no-repeat;
+}
+
+a.closedSection {
+	background: url(../images/sub_blue_add.png) 0 50% no-repeat;
+}

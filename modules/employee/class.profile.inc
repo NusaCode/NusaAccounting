@@ -1,0 +1,74 @@
+<?php
+/**
+ * This file is part of the Achievo distribution.
+ * Detailed copyright and licensing information can be found
+ * in the doc/COPYRIGHT and doc/LICENSE files which should be
+ * included in the distribution.
+ *
+ * @package achievo
+ * @subpackage employee
+ *
+ * @copyright (c)2008 Ibuildings B.V.
+ * @license http://www.achievo.org/licensing Achievo Open Source License
+ *
+ * @version $Revision: 5077 $
+ * $Id: class.profile.inc 5077 2008-06-30 20:50:48Z sandy $
+ */
+useattrib("atkdummyattribute");
+useattrib("atknumberattribute");
+useattrib("atkprofileattribute");
+/**
+ * Class for managing profiles
+ * @package achievo
+ * @subpackage employee
+ */
+class profile extends atkNode
+{
+  /**
+   * Constructor
+   */
+  function profile()
+  {
+    $this->atkNode("profile", NF_EDITAFTERADD|NF_NO_VIEW| NF_LOCK); // view disabled as long as profileattribute does not support display
+
+    $this->add(new atkNumberAttribute("id",AF_AUTOKEY));
+    $this->add(new atkAttribute("name",AF_OBLIGATORY|AF_UNIQUE|AF_SEARCHABLE, 50));
+    $this->add(new atkDummyAttribute("profile_explanation",atktext("profile_explanation"),AF_HIDE_LIST|AF_HIDE_ADD));
+    $this->add(new atkProfileAttribute("accessrights",AF_HIDE_LIST|AF_HIDE_ADD|AF_BLANKLABEL));
+    $this->add(new atkAttribute("id_org", AF_HIDE | AF_FORCELOAD));
+
+    $user = getUser();
+      if(!empty($_SESSION['idOrganization'])) {
+        $this->addFilter("profile.id_org = '".$_SESSION['idOrganization']."'");}
+      else{
+        $this->addFilter("profile.id_org = '".$user[employer_id]."'");     
+      }
+
+    $this->setTable("profile","profile");
+    $this->setOrder("name");
+  }
+
+  /**
+   * Descriptor template
+   *
+   * @return string
+   */
+  function descriptor_def()
+  {
+    return "[name]";
+  }
+
+  function initial_values(){
+      $user = getUser();
+      
+      if(!empty($_SESSION['idOrganization'])) {
+        $id_org = $_SESSION['idOrganization'];}
+      else{
+        $id_org = $user['employer_id'];
+      }
+
+      return array("id_org" => $id_org);
+  }  
+}
+
+?>
